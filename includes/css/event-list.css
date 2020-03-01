@@ -10,6 +10,35 @@ li.event {
 	zoom: 1; /* Fix for IE 6+7 */
 }
 
+.event-list-view {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+	    .event {
+		    flex: 0 0 auto;
+			margin-right: 5px;
+}
+}
+
+.event {
+#  border: 2px solid $red;
+  width: 300px;
+  height: 85px;
+	    background: white;
+		}
+
+.event-list-view {
+  height: 80px;
+  margin-bottom: 20px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+  display: none;
+}
+}
+
 .event-date {
 	float: left;
 	margin: 0 0.4em 1.5em 0;

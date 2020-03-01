@@ -170,12 +170,12 @@ class SC_Event_List {
 		else {
 			// print available events
 			$out .= '
-				<ul class="event-list-view">';
+				<div class="event-list-view">';
 			$single_day_only = $this->is_single_day_only($events);
 			foreach ($events as $event) {
 				$out .= $this->html_event($event, $a, $single_day_only);
 			}
-			$out .= '</ul>';
+			$out .= '</div>';
 		}
 		$out .= $this->html_feed_link($a, 'bottom');
 		return $out;
@@ -186,7 +186,7 @@ class SC_Event_List {
 		$cat_string = implode(' ', $event->get_category_slugs());
 		// add class with each category slug
 		$out = '
-			 	<li class="event '.$cat_string.'">';
+			 	<div class="event '.$cat_string.'">';
 		// event date
 		if('1' !== $this->options->get('el_date_once_per_day') || $last_event_startdate !== $event->startdate || $last_event_enddate !== $event->enddate) {
 			$out .= $this->html_fulldate($event->startdate, $event->enddate, $single_day_only);
@@ -236,7 +236,7 @@ class SC_Event_List {
 			$out .= $this->get_content($event, $a);
 		}
 		$out .= '</div>
-				</li>';
+				</div>';
 		$last_event_startdate = $event->startdate;
 		$last_event_enddate = $event->enddate;
 		return $out;
