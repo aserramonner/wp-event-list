@@ -130,13 +130,17 @@ class SC_Event_List {
 
 	private function html_event_content(&$a) {
 		$event = new EL_Event($a['event_id']);
-		$out = $this->html_filterbar($a);
-		$out .= '
-			<h2>'.__('Event Information:','event-list').'</h2>
-			<ul class="single-event-view">';
-		$single_day_only = ($event->startdate == $event->enddate) ? true : false;
-		$out .= $this->html_event($event, $a, $single_day_only);
-		$out .= '</ul>';
+#		$out = $this->html_filterbar($a);
+#		$out .= '
+#			<h2>'.__('Event Information:','event-list').'</h2>
+#			<ul class="single-event-view">';
+#		$single_day_only = ($event->startdate == $event->enddate) ? true : false;
+#		$out .= $this->html_event($event, $a, $single_day_only);
+#		$out .= '</ul>';
+		$out = '<div class="mep-events-wrapper">';
+        require_once(dirname(__FILE__) . "/themes/theme-1.php"); 
+        $out .= '</div>';
+
 		return $out;
 	}
 

@@ -20,6 +20,7 @@ class EL_Event {
 	public $starttime = '';
 	public $location = '';
 	public $content = '';
+	public $price = '';
 
 	public function __construct($post) {
 		$this->events_post_type = &EL_Events_Post_Type::get_instance();
