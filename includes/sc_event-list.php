@@ -144,7 +144,6 @@ class SC_Event_List {
         ?>
         </div>
         <?php
-		return $out;
 	}
 
 	private function html_events(&$a) {
@@ -194,11 +193,14 @@ class SC_Event_List {
 		// add class with each category slug
 		$out = '
 			 	<div class="event '.$cat_string.'">';
+		$out .= '<div class="event-thumbnail">';
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id($event->post->ID), 'full' ); 
+		$out .= '<img src="'.$image[0].'">';
 		// event date
 		if('1' !== $this->options->get('el_date_once_per_day') || $last_event_startdate !== $event->startdate || $last_event_enddate !== $event->enddate) {
 			$out .= $this->html_fulldate($event->startdate, $event->enddate, $single_day_only);
 		}
-		$out .= '
+		$out .= '</div>
 					<div class="event-info';
 		if( $single_day_only ) {
 			$out .= ' single-day';
@@ -208,6 +210,7 @@ class SC_Event_List {
 		}
 		$out .= '">';
 		// event title
+		$out .= '</div><div class="event-details">';
 		$out .= '<div class="event-title"><h3>';
 		$title = $event->truncate(esc_attr($event->title), $a['title_length'], $this->single_event);
 		if($this->is_link_available($a, $event)) {

@@ -57,7 +57,7 @@
         <div class="df-sidebar-part">
                 <div class="event-single-sidebar-social">
 <div class="event-event-meta">
-         Compartir és estimar !<ul class="event-social-share">
+         Compartir<ul class="event-social-share">
 		 <li> <a data-toggle="tooltip" title="" class="facebook" onclick="window.open('https://www.facebook.com/sharer.php?u=<?php echo get_permalink($event->post->ID)?>','Facebook','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink($event->post->ID)?>" data-original-title="Comparteix al Facebook"><i class="fa fa-facebook"></i></a></li>
 		 <li><a data-toggle="tooltip" title="" class="twitter" onclick="window.open('https://twitter.com/share?url=<?php echo get_permalink($event->post->ID)?>','Compartir al Twitter','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" href="http://twitter.com/share?url=<?php echo get_permalink($event->post->ID)?>" data-original-title="Comparteix al Twitter"><i class="fa fa-twitter"></i></a></li>
           </ul>

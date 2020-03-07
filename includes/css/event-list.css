@@ -16,10 +16,10 @@ li.event {
   overflow-x: auto;
   overflow-y: hidden;
 
-	    .event {
+  .event {
 		    flex: 0 0 auto;
 			margin-right: 5px;
-}
+  }
 }
 
 .event {
@@ -39,8 +39,15 @@ li.event {
 }
 }
 
+.event-thumbnail {
+  position: relative;
+}
+
 .event-date {
 	float: left;
+	position: absolute;
+	top: 10px;
+	left: 10px;
 #	margin: 0 0.4em 1.5em 0;
 }
 
@@ -51,7 +58,10 @@ li.event {
 .event-list .startdate, .event-list .enddate {
 	text-align: center;
 	width: 3.2em;
-	background-color: rgb(230,230,230);
+#	background-color: rgb(230,230,230);
+    background-color: #81d742;
+	color: #fff;
+	border-radius: 6px;
 }
 
 .event-list .startdate {

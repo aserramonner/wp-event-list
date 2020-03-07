@@ -226,7 +226,7 @@ class EL_Filterbar {
 		                        'date'.$args['sc_id_for_url'],
 		                        'cat'.$args['sc_id_for_url']);
 		if(!isset($options['caption'])) {
-			$options['caption'] = __('Reset','event-list');
+			$options['caption'] = __('Reinicialitza','event-list');
 		}
 		return $this->show_link(remove_query_arg($args_to_remove, $url), $options['caption'], 'link');
 	}
@@ -275,20 +275,20 @@ class EL_Filterbar {
 
 	private function all_element($list_type='date', $display_type='hlist') {
 		if('hlist' == $display_type) {
-			$name = __('All','event-list');
+			$name = __('Tots','event-list');
 		}
 		else {
-			$name = ('date' == $list_type) ? __('All Dates','event-list') :  __('All Categories');
+			$name = ('date' == $list_type) ? __('Totes les dates','event-list') :  __('Totes les categories');
 		}
 		return array('slug' => 'all', 'name' => $name);
 	}
 
 	private function upcoming_element() {
-		return array('slug' => 'upcoming', 'name' => __('Upcoming','event-list'));
+		return array('slug' => 'upcoming', 'name' => __('Futurs','event-list'));
 	}
 
 	private function past_element() {
-		return array('slug' => 'past', 'name' => __('Past','event-list'));
+		return array('slug' => 'past', 'name' => __('Passats','event-list'));
 	}
 
 	private function parse_args(&$args) {
