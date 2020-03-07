@@ -1,8 +1,5 @@
 <?php
 // Settings Value :::::::::::::::::::::::::::::::::::::::;
-$hide_share_details = mep_get_option('mep_event_hide_share_this_details', 'general_setting_sec', 'no');
-$hide_calendar_details = mep_get_option('mep_event_hide_calendar_details', 'general_setting_sec', 'no');
-
 ?>
 <div class="mep-default-theme spring_field">
     <div class="mep_flex">
@@ -53,7 +50,7 @@ $hide_calendar_details = mep_get_option('mep_event_hide_calendar_details', 'gene
                 <div class="df-ico"><i class="fa fa-map-marker"></i></div>
                 <div class='df-dtl'>
                     <h3>
-                        <?php echo mep_get_option('mep_event_location_text', 'label_setting_sec') ? mep_get_option('mep_event_location_text', 'label_setting_sec') : _e('Lloc:', 'mage-eventpress'); ?>
+                       Lloc
                     </h3>
                     <p><?php echo $event->location; ?></p>
                 </div>

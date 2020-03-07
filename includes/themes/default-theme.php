@@ -14,7 +14,7 @@
                     <div class="f-ico"><i class="fa fa-calendar"></i></div>
                     <div class='f-dtl'>
                         <h3>
-                            <?php echo mep_get_option('mep_event_date_text', 'label_setting_sec') ? mep_get_option('mep_event_date_text', 'label_setting_sec') : _e('Data', 'mage-eventpress'); ?>
+                            Data
                         </h3>
                         <p><?php echo $event->startdate; ?></p>
                     </div>
@@ -23,7 +23,7 @@
                     <div class="f-ico"><i class="fa fa-clock-o"></i></div>
                     <div class='f-dtl'>
                         <h3>
-                            <?php echo mep_get_option('mep_event_time_text', 'label_setting_sec') ? mep_get_option('mep_event_time_text', 'label_setting_sec') : _e('Hora', 'mage-eventpress'); ?>
+                            Hora
                         </h3>
                         <p><?php echo $event->starttime; ?></p>
                     </div>
@@ -32,7 +32,7 @@
                     <div class="f-ico"><i class="fa fa-map-marker"></i></div>
                     <div class='f-dtl'>
                         <h3>
-                            <?php echo mep_get_option('mep_event_location_text', 'label_setting_sec') ? mep_get_option('mep_event_location_text', 'label_setting_sec') : _e('Lloc', 'mage-eventpress'); ?>
+                           Lloc
                         </h3>
                         <p>
                         <?php echo $event->location; ?>

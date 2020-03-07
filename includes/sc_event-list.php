@@ -138,7 +138,7 @@ class SC_Event_List {
 #		$out .= $this->html_event($event, $a, $single_day_only);
 #		$out .= '</ul>';
 		?>
-			<div class="event-single-wrapper"><?php
+        <div class="event-single-wrapper"><?php
 #        require_once(dirname(__FILE__) . "/themes/theme-1.php"); 
         require_once(dirname(__FILE__) . "/themes/default-theme.php"); 
         ?>
