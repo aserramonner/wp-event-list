@@ -195,30 +195,16 @@ class SC_Event_List {
 			 	<div class="event '.$cat_string.'">';
 		$out .= '<div class="event-thumbnail">';
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id($event->post->ID), 'full' ); 
-		$out .= '<img src="'.$image[0].'">';
+		$out .= '<a href="'.$this->get_event_url($a, $event->post->ID).'"><img src="'.$image[0].'"></a>';
 		// event date
 		if('1' !== $this->options->get('el_date_once_per_day') || $last_event_startdate !== $event->startdate || $last_event_enddate !== $event->enddate) {
 			$out .= $this->html_fulldate($event->startdate, $event->enddate, $single_day_only);
 		}
-		$out .= '</div>
-					<div class="event-info';
-		if( $single_day_only ) {
-			$out .= ' single-day';
-		}
-		else {
-			$out .= ' multi-day';
-		}
-		$out .= '">';
 		// event title
 		$out .= '</div><div class="event-details">';
 		$out .= '<div class="event-title"><h3>';
 		$title = $event->truncate(esc_attr($event->title), $a['title_length'], $this->single_event);
-		if($this->is_link_available($a, $event)) {
-			$out .= $this->get_event_link($a, $event->post->ID, $title);
-		}
-		else {
-			$out .= $title;
-		}
+        $out .= $title;
 		$out .= '</h3></div>';
 		// event starttime
 		if('' != $event->starttime && $this->is_visible($a['show_starttime'])) {

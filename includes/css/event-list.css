@@ -41,6 +41,12 @@ li.event {
 
 .event-thumbnail {
   position: relative;
+  max-height: 210px;
+  overflow: hidden;
+}
+
+.event-details {
+  margin: 5px;
 }
 
 .event-date {
