@@ -137,10 +137,13 @@ class SC_Event_List {
 #		$single_day_only = ($event->startdate == $event->enddate) ? true : false;
 #		$out .= $this->html_event($event, $a, $single_day_only);
 #		$out .= '</ul>';
-		$out = '<div class="mep-events-wrapper">';
-        require_once(dirname(__FILE__) . "/themes/theme-1.php"); 
-        $out .= '</div>';
-
+		?>
+			<div class="event-single-wrapper"><?php
+#        require_once(dirname(__FILE__) . "/themes/theme-1.php"); 
+        require_once(dirname(__FILE__) . "/themes/default-theme.php"); 
+        ?>
+        </div>
+        <?php
 		return $out;
 	}
 
