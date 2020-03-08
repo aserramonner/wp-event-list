@@ -334,15 +334,15 @@ div.mep-related-events-sec div.mep_event_list_sec{display: block;}
 .mep-default-title h2, .section-heading h2,
 h4.mep-cart-table-title,
 h3.ex-sec-title{font-size: 20px;}
-div.mep_event_list div.mage_grid_box>div{width: 100%;}
-.mep_event_list .mep_event_list_sec div.mep_event_list_item>div{width: 100%;}
-.mep_event_list .mep_event_list_sec div.mep_event_list_item .mep_list_event_details{margin: 0}
+#div.mep_event_list div.mage_grid_box>div{width: 100%;}
+#.mep_event_list .mep_event_list_sec div.mep_event_list_item>div{width: 100%;}
+#.mep_event_list .mep_event_list_sec div.mep_event_list_item .mep_list_event_details{margin: 0}
 .mep_event_list .mep_event_list_sec div.mep_event_list_item img,
 div.mep_event_list div.mage_grid_box img{min-height: auto;}
-.mage_grid_box>div,
-																											    .mage_grid_box .mep_event_grid_item:last-child{margin: 0 0 15px 0;}
-																												    .mage_grid_box{margin: 0;}
-																													    .mep-events-wrapper input.extra-qty-box{width: 30px;}
-																														    .mep-events-wrapper .mage_input_group{max-width: 90px;}
+#.mage_grid_box>div,
+#.mage_grid_box .mep_event_grid_item:last-child{margin: 0 0 15px 0;}
+#.mage_grid_box{margin: 0;}
+.mep-events-wrapper input.extra-qty-box{width: 30px;}
+.mep-events-wrapper .mage_input_group{max-width: 90px;}
 }
 
