@@ -40,9 +40,12 @@ li.event {
 }
 
 .event-thumbnail {
+  display: block;
   position: relative;
-  max-height: 210px;
+  max-height: 200px;
+  min-width: 210px;
   overflow: hidden;
+  padding: 0 0 34.37% 0;
 }
 
 .event-details {
@@ -65,7 +68,7 @@ li.event {
 	text-align: center;
 	width: 3.2em;
 #	background-color: rgb(230,230,230);
-    background-color: #81d742;
+    background-color: #009933;
 	color: #fff;
 	border-radius: 6px;
 }
@@ -244,7 +247,7 @@ div.event-single-feature-time {
 }
 
 .f-ico i {
-  background: #ffbe30;
+  background: #009933;
   color: #fff;
   font-size: 25px;
   width: 50px;
@@ -295,7 +298,7 @@ ul.event-social-share a {
   justify-content: center;  
   align-items: center;
   display: flex;
-  background: #ffbe30;
+  background: #009933;
   border-radius: 50%;
   width: 50px;
   height: 50px;
