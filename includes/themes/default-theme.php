@@ -41,8 +41,8 @@
                 </div>
         </div>
         <div class="event-single-feature-content">
-             <p>
-                <?php echo $event->content; ?>
+			 <p>
+               <?php echo wpautop($event->content); ?>
 	         </p>
         </div>
     </div>

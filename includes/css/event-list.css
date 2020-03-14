@@ -267,6 +267,10 @@ div.event-single-feature-time {
   flex: 1;
 }
 
+div.event-single-feature-content p {
+  margin-bottom: 12px;
+}
+
 .f-ico i {
   background: #009933;
   color: #fff;
