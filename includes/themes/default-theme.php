@@ -41,7 +41,9 @@
                 </div>
         </div>
         <div class="event-single-feature-content">
-                        <?php echo $event->content; ?>
+             <p>
+                <?php echo $event->content; ?>
+	         </p>
         </div>
     </div>
     <div class="event-sidebar">

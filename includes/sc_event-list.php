@@ -200,12 +200,13 @@ class SC_Event_List {
 		if('1' !== $this->options->get('el_date_once_per_day') || $last_event_startdate !== $event->startdate || $last_event_enddate !== $event->enddate) {
 			$out .= $this->html_fulldate($event->startdate, $event->enddate, $single_day_only);
 		}
-		// event title
+		// event warning
+        if('' != $event->warning) {
+		    $out .= '<p><span>';
+	    	$out .= $event->warning;
+    		$out .= '</span></p>';
+		}
 		$out .= '</div><div class="event-details">';
-		$out .= '<div class="event-title"><h3>';
-		$title = $event->truncate(esc_attr($event->title), $a['title_length'], $this->single_event);
-        $out .= $title;
-		$out .= '</h3></div>';
 		// event starttime
 		if('' != $event->starttime && $this->is_visible($a['show_starttime'])) {
 			if('' == $this->options->get('el_html_tags_in_time')) {
@@ -223,6 +224,11 @@ class SC_Event_List {
 			}
 			$out .= '<span class="event-location">'.$location.'</span>';
 		}
+		// event title
+		$out .= '<div class="event-title"><h3>';
+		$title = $event->truncate(esc_attr($event->title), $a['title_length'], $this->single_event);
+        $out .= $title;
+		$out .= '</h3></div>';
 		// event categories
 		if( $this->is_visible( $a['show_cat'] ) ) {
 			$out .= '<div class="event-cat">'.esc_attr(implode(', ', $event->get_category_names())).'</div>';

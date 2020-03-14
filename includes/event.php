@@ -21,6 +21,7 @@ class EL_Event {
 	public $location = '';
 	public $content = '';
 	public $price = '';
+	public $warning = '';
 
 	public function __construct($post) {
 		$this->events_post_type = &EL_Events_Post_Type::get_instance();
@@ -40,7 +41,7 @@ class EL_Event {
 		$this->title = $this->post->post_title;
 		$this->content = $this->post->post_content;
 		$postmeta = get_post_meta($this->post->ID);
-		foreach(array('startdate', 'enddate', 'starttime', 'location') as $meta) {
+		foreach(array('startdate', 'enddate', 'starttime', 'location', 'warning') as $meta) {
 			$this->$meta = isset($postmeta[$meta][0]) ? $postmeta[$meta][0] : '';
 		}
 		$this->categories = get_the_terms($this->post, $this->events_post_type->taxonomy);
@@ -101,6 +102,7 @@ class EL_Event {
 		$eventdata['enddate'] = empty($eventdata['enddate']) ? '' : preg_replace('/[^0-9\-]/', '', $eventdata['enddate']);
 		$eventdata['starttime'] = empty($eventdata['starttime']) ? '' : wp_kses_post($eventdata['starttime']);
 		$eventdata['location'] = empty($eventdata['location']) ? '' : wp_kses_post($eventdata['location']);
+		$eventdata['warning'] = empty($eventdata['warning']) ? '' : wp_kses_post($eventdata['warning']);
 
 		//startdate
 		$instance->startdate = $instance->validate_date($eventdata['startdate']);
@@ -114,11 +116,15 @@ class EL_Event {
 		}
 		//time
 		$instance->starttime = $instance->validate_time($eventdata['starttime']);
+
 		//location
 		$instance->location = stripslashes($eventdata['location']);
 
+		//warning
+		$instance->warning = stripslashes($eventdata['warning']);
+
 		// update all data
-		foreach(array('startdate', 'enddate', 'starttime', 'location') as $meta) {
+		foreach(array('startdate', 'enddate', 'starttime', 'location', 'warning') as $meta) {
 			update_post_meta($pid, $meta, $instance->$meta);
 		}
 		// error handling: set event back to pending, and publish error message

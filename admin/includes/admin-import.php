@@ -228,6 +228,7 @@ class EL_Admin_Import {
 				<span class="el-event-header">'.__('End Date','event-list').':</span> <span class="el-event-data">'.$event['enddate'].'</span><br />
 				<span class="el-event-header">'.__('Time','event-list').':</span> <span class="el-event-data">'.$event['starttime'].'</span><br />
 				<span class="el-event-header">'.__('Location','event-list').':</span> <span class="el-event-data">'.$event['location'].'</span><br />
+				<span class="el-event-header">'.__('Warning','event-list').':</span> <span class="el-event-data">'.$event['warning'].'</span><br />
 				<span class="el-event-header">'.__('Content','event-list').':</span> <span class="el-event-data">'.$event['content'].'</span><br />
 				<span class="el-event-header">'.__('Category slugs','event-list').':</span> <span class="el-event-data">'.implode(', ', $event['categories']).'</span>
 				</p>';

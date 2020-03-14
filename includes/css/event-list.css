@@ -48,6 +48,27 @@ li.event {
   padding: 0 0 34.37% 0;
 }
 
+.event-thumbnail p span {
+    position: absolute;
+	display: inline-block;
+#	right: -25px;
+	left: 25px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.2), inset 0px 5px 30px rgba(255,255,255,0.2);
+	text-align: center;
+	text-transform: uppercase;
+	top: 100px;
+	background: #d93131;
+	width: 100px;
+	padding: 3px 10px;
+	-webkit-transform: rotate(-25deg);
+	-moz-transform: rotate(-25deg);
+	-o-transform: rotate(-25deg);
+	-ms-transform: rotate(-25deg);
+	color: #fff;
+	font-family: Arial, sans-serif;
+	font-weight: 900;
+} 
+
 .event-details {
   margin: 5px;
 }

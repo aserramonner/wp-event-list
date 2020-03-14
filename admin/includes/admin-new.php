@@ -64,6 +64,7 @@ class EL_Admin_New {
 			$enddate = $startdate;
 			$starttime = '';
 			$location = '';
+			$warning = '';
 		}
 		else {
 			// set existing eventdata
@@ -72,6 +73,7 @@ class EL_Admin_New {
 			$enddate = strtotime($event->enddate);
 			$starttime = esc_html($event->starttime);
 			$location = esc_html($event->location);
+			$warning = esc_html($event->warning);
 		}
 		// Add required data for javascript in a hidden field
 		$json = json_encode(array('el_date_format'    => $this->datepicker_format($this->get_event_dateformat()),
@@ -91,7 +93,9 @@ class EL_Admin_New {
 					<label class="event-option">'.__('Time','event-list').':</label>
 					<div class="event-data"><input type="text" class="text" name="starttime" id="starttime" value="'.$starttime.'" /></div>
 					<label class="event-option">'.__('Location','event-list').':</label>
-					<div class="event-data"><input type="text" class="text" name="location" id="location" value="'.$location.'" /></div>';
+					<div class="event-data"><input type="text" class="text" name="location" id="location" value="'.$location.'" /></div>
+					<label class="event-option">'.__('Warning','event-list').':</label>
+					<div class="event-data"><input type="text" class="text" name="warning" id="warning" value="'.$warning.'" /></div>';
 	}
 
 	public function form_top_content() {
