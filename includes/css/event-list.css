@@ -42,10 +42,14 @@ li.event {
 .event-thumbnail {
   display: block;
   position: relative;
-  max-height: 200px;
+  height: 150px;
   min-width: 210px;
   overflow: hidden;
   padding: 0 0 34.37% 0;
+}
+
+.event-thumbnail img {
+    height: auto;
 }
 
 .event-thumbnail p span {

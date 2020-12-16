@@ -22,6 +22,7 @@ class EL_Event {
 	public $content = '';
 	public $price = '';
 	public $warning = '';
+	public $buynow = '';
 
 	public function __construct($post) {
 		$this->events_post_type = &EL_Events_Post_Type::get_instance();
@@ -41,7 +42,7 @@ class EL_Event {
 		$this->title = $this->post->post_title;
 		$this->content = $this->post->post_content;
 		$postmeta = get_post_meta($this->post->ID);
-		foreach(array('startdate', 'enddate', 'starttime', 'location', 'warning') as $meta) {
+		foreach(array('startdate', 'enddate', 'starttime', 'location', 'warning', 'buynow') as $meta) {
 			$this->$meta = isset($postmeta[$meta][0]) ? $postmeta[$meta][0] : '';
 		}
 		$this->categories = get_the_terms($this->post, $this->events_post_type->taxonomy);
@@ -103,6 +104,7 @@ class EL_Event {
 		$eventdata['starttime'] = empty($eventdata['starttime']) ? '' : wp_kses_post($eventdata['starttime']);
 		$eventdata['location'] = empty($eventdata['location']) ? '' : wp_kses_post($eventdata['location']);
 		$eventdata['warning'] = empty($eventdata['warning']) ? '' : wp_kses_post($eventdata['warning']);
+		$eventdata['buynow'] = empty($eventdata['buynow']) ? '' : wp_kses_post($eventdata['buynow']);
 
 		//startdate
 		$instance->startdate = $instance->validate_date($eventdata['startdate']);
@@ -123,8 +125,11 @@ class EL_Event {
 		//warning
 		$instance->warning = stripslashes($eventdata['warning']);
 
+		//warning
+		$instance->buynow = stripslashes($eventdata['buynow']);
+
 		// update all data
-		foreach(array('startdate', 'enddate', 'starttime', 'location', 'warning') as $meta) {
+		foreach(array('startdate', 'enddate', 'starttime', 'location', 'warning', 'buynow') as $meta) {
 			update_post_meta($pid, $meta, $instance->$meta);
 		}
 		// error handling: set event back to pending, and publish error message

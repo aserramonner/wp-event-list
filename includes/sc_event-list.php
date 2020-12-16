@@ -229,6 +229,14 @@ class SC_Event_List {
 		$title = $event->truncate(esc_attr($event->title), $a['title_length'], $this->single_event);
         $out .= $title;
 		$out .= '</h3></div>';
+		// event buynow
+        if('' != $event->buynow) {
+		    $out .= '<p><span>';
+			$out .= '<pretix-button event="';
+	    	$out .= $event->buynow;
+	        $out .= '"> Entrades </pretix-button>';
+    		$out .= '</span></p>';
+		}
 		// event categories
 		if( $this->is_visible( $a['show_cat'] ) ) {
 			$out .= '<div class="event-cat">'.esc_attr(implode(', ', $event->get_category_names())).'</div>';

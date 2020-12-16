@@ -197,6 +197,7 @@ class EL_Upgrade {
 						'(SELECT meta_value FROM wp_postmeta WHERE wp_postmeta.meta_key = "starttime" AND wp_postmeta.post_id = wp_posts.ID) AS starttime, '.
 						'(SELECT meta_value FROM wp_postmeta WHERE wp_postmeta.meta_key = "location" AND wp_postmeta.post_id = wp_posts.ID) AS location '.
 						'(SELECT meta_value FROM wp_postmeta WHERE wp_postmeta.meta_key = "warning" AND wp_postmeta.post_id = wp_posts.ID) AS warning '.
+						'(SELECT meta_value FROM wp_postmeta WHERE wp_postmeta.meta_key = "buynow" AND wp_postmeta.post_id = wp_posts.ID) AS buynow '.
 						'FROM wp_posts WHERE post_type = "el_events") AS events) AS events '.
 						'WHERE ('.
 						'post_title="'.wp_kses_post($event['title']).'" AND '.
@@ -205,6 +206,7 @@ class EL_Upgrade {
 						'enddate="'.$event['end_date'].'" AND '.
 						'starttime = "'.wp_kses_post(EL_Event::validate_time($event['time'])).'" AND '.
 						'location = "'.wp_kses_post($event['location']).'") AND '.
+						'buynow = "'.wp_kses_post($event['buynow']).'") AND '.
 						'warning = "'.wp_kses_post($event['warning']).'")';
 					$ret = $wpdb->get_row($sql, ARRAY_N);
 					if(is_array($ret)) {
@@ -219,6 +221,7 @@ class EL_Upgrade {
 					$eventdata['starttime'] = $event['time'];
 					$eventdata['location'] = $event['location'];
 					$eventdata['warning'] = $event['warning'];
+					$eventdata['buynow'] = $event['buynow'];
 					$eventdata['content'] = $event['details'];
 					$eventdata['post_date'] = $event['pub_date'];
 					$eventdata['post_user'] = $event['pub_user'];

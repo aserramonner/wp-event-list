@@ -61,6 +61,7 @@ class EL_Admin_Main {
 			'title'                                       => __('Title','event-list'),
 			'location'                                    => __('Location','event-list'),
 			'warning'                                     => __('Warning','event-list'),
+			'buynow'                                     => __('buynow','event-list'),
 			'taxonomy-'.$this->events_post_type->taxonomy => __('Categories'),
 			'author'                                      => __('Author','event-list'),
 			'date'                                        => __('Date')
